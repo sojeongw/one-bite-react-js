@@ -36,6 +36,15 @@ const Editor = ({ onSubmit, initData }) => {
     content: "",
   });
 
+  useEffect(() => {
+    if (initData) {
+      setInput({
+        ...initData,
+        createdDate: new Date(Number(initData.createdDate)),
+      });
+    }
+  }, [initData]);
+
   const onChangeInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
