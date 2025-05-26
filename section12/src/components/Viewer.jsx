@@ -2,9 +2,7 @@ import "./Viewer.css";
 import { getEmotionImage } from "../util/get-emotion-image";
 import { emotionList } from "../util/constants";
 
-const Viewer = () => {
-  const emotionId = 2;
-
+const Viewer = ({ emotionId, content }) => {
   const emotionItem = emotionList.find(
     (item) => String(item.emotionId) === String(emotionId)
   );
